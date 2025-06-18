@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ app_name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- ✅ Responsive meta -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            background-color: #f8f9fa;
+        }
+
+        #chat-container {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 20px;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0 10px;
+        }
+
+        #chat-box {
+            flex-grow: 1;
+            overflow-y: auto;
+            background: white;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: .5rem;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+            word-wrap: break-word;
+        }
+
+        .chat-message.me {
+            text-align: right;
+            color: #0d6efd;
+        }
+
+        .chat-message.other {
+            text-align: left;
+            color: #198754;
+        }
+
+        .text-muted {
+          font-style: italic;
+        }
+
+
+        #message-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 576px) {
+            #chat-container {
+                height: 85vh;
+                margin-top: 10px;
+                padding: 0 5px;
+            }
+
+            #message-input {
+                flex-direction: column;
+            }
+
+            #message-input input, #message-input button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="modal fade" id="usernameModal" tabindex="-1" aria-labelledby="usernameModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Enter your name to join</h1>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="usernameInput" class="form-control" placeholder="Your name">
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="joinChat" class="btn btn-primary">Join Chat</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chat -->
+<div id="chat-container" class="container d-none">
+    <div class="mb-3">
+        <strong>Active users:</strong>
+        <ul id="userList" class="list-inline mb-0"></ul>
+    </div>
+    <div id="chat-box" class="mb-3"></div>
+    <div id="message-input">
+        <input type="text" id="message" class="form-control" placeholder="Type a message...">
+        <button class="btn btn-success" id="sendBtn">Send</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/script.js"></script>
+</body>
+</html>
