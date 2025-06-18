@@ -1,6 +1,6 @@
 # 💬 FastAPI WebSocket Chat Room
 
-A real-time chat room built using FastAPI, WebSockets, Bootstrap, and vanilla JavaScript. Users can join the chat by entering their name, send messages in real time, and see who is currently online.
+A real-time chat room built using FastAPI, WebSockets, Bootstrap, and JavaScript. Users can join the chat by entering their name, send messages in real time, and see who is currently online.
 
 ---
 
